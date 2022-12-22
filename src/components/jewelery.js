@@ -1,5 +1,5 @@
 export const Jewellery = () => {
-    return (<root>
+    return (<div>
 
         {/* item section */}
         <div className="item_section layout_padding2">
@@ -184,7 +184,7 @@ export const Jewellery = () => {
         </section>
         {/* footer section */}
 
-    </root>)
+    </div>)
 
 
 }
