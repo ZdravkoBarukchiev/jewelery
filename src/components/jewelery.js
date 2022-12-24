@@ -88,14 +88,14 @@ export const Jewellery = () => {
                             <h5>
                                 $<span>1000.00</span>
                             </h5>
-                            <a href="">Buy Now</a>
+                            {/*<a href="">Buy Now</a>*/}
                         </div>
                     </div>
                 </div>
                 <div className="d-flex justify-content-center">
-                    <a href="" className="price_btn">
+                    {/*<a href="" className="price_btn">
                         See More
-                    </a>
+                     </a>*/}
                 </div>
             </div>
         </section>
