@@ -60,7 +60,7 @@ export const Jewellery = () => {
                             <h5>
                                 $<span>1000.00</span>
                             </h5>
-                            <a href="">Buy Now</a>
+                            {/*<a href="">Buy Now</a>*/}
                         </div>
                     </div>
                     <div className="box">
@@ -74,7 +74,7 @@ export const Jewellery = () => {
                             <h5>
                                 $<span>1000.00</span>
                             </h5>
-                            <a href="">Buy Now</a>
+                            {/*<a href="">Buy Now</a>*/}
                         </div>
                     </div>
                     <div className="box">
@@ -107,34 +107,34 @@ export const Jewellery = () => {
                     <div className="row">
                         <div className="col-md-3">
                             <div className="info_logo">
-                                <a href="">
+                                {/*<a href="">
                                     <img src="images/logo.png" alt="" />
                                     <span>Lodge</span>
-                                </a>
+                                </a>*/}
                             </div>
                         </div>
                         <div className="col-md-3">
                             <div className="info_contact">
-                                <a href="">
+                               {/* <a href="">
                                     <img src="images/location.png" alt="" />
                                     <span>Address</span>
-                                </a>
+                                </a>*/}
                             </div>
                         </div>
                         <div className="col-md-3">
                             <div className="info_contact">
-                                <a href="">
+                                {/*<a href="">
                                     <img src="images/phone.png" alt="" />
                                     <span>+01 1234567890</span>
-                                </a>
+                                </a>*/}
                             </div>
                         </div>
                         <div className="col-md-3">
                             <div className="info_contact">
-                                <a href="">
+                                {/*<a href="">
                                     <img src="images/mail.png" alt="" />
                                     <span>demo@gmail.com</span>
-                                </a>
+                                </a>*/}
                             </div>
                         </div>
                     </div>
@@ -157,7 +157,7 @@ export const Jewellery = () => {
                             <h5 className="info_heading">Follow Us</h5>
                         </div>
                         <div className="social_box">
-                            <a href="">
+                           {/*} <a href="">
                                 <img src="images/fb.png" alt="" />
                             </a>
                             <a href="">
@@ -168,7 +168,7 @@ export const Jewellery = () => {
                             </a>
                             <a href="">
                                 <img src="images/insta.png" alt="" />
-                            </a>
+                            </a>*/}
                         </div>
                     </div>
                 </div>
