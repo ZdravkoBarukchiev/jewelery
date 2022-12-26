@@ -1,5 +1,5 @@
 import { About } from './components/about/About';
-import { Contact } from './components/contact/Contact';
+import { Contacts } from './components/contacts/Contacts';
 import { Jewellery } from './components/jewellery/Jewelery';
 
 function App() {
@@ -9,7 +9,7 @@ function App() {
 
         <Jewellery />
         <About />
-        <Contact/>
+        <Contacts/>
         <a
           className="App-link"
           href="https://reactjs.org"
