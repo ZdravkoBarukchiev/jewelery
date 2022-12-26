@@ -1,11 +1,13 @@
+import { About } from './components/about/About';
 import { Jewellery } from './components/jewelery';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        
-        <Jewellery/>
+
+        <Jewellery />
+        <About />
         <a
           className="App-link"
           href="https://reactjs.org"
