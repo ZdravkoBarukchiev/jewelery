@@ -108,6 +108,7 @@ export const Contacts = () => {
             <div className="map_container">
               <div className="map-responsive">
                 { <iframe
+                title='map'
                 src="https://www.google.com/maps/embed/v1/place?key=AIzaSyA0s1a7phLN0iaD6-UE7m4qP-z21pH0eSc&q=Eiffel+Tower+Paris+France"
                 width={600}
                 height={300}
