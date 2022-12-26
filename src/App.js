@@ -1,5 +1,5 @@
 import { About } from './components/about/About';
-import { Jewellery } from './components/jewelery';
+import { Jewellery } from './components/jewellery/Jewelery';
 
 function App() {
   return (
