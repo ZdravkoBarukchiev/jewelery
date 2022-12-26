@@ -7,7 +7,7 @@ export const Jewellery = () => {
                     <nav className="navbar navbar-expand-lg custom_nav-container ">
                         <a className="navbar-brand" href="index.html">
                             <img src="images/logo.png" alt="" />
-                            <span>Jewellery</span>
+                            <span>Lodge</span>
                         </a>
                         <button
                             className="navbar-toggler"
