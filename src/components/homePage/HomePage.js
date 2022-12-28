@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom"
+
 export const HomePage = () => {
     return (<body>
         <div className="hero_area">
@@ -5,10 +7,10 @@ export const HomePage = () => {
             <header className="header_section">
                 <div className="container-fluid">
                     <nav className="navbar navbar-expand-lg custom_nav-container ">
-                        <a className="navbar-brand" href="index.html">
+                        <Link to='/' className="navbar-brand" >
                             <img src="images/logo.png" alt="" />
                             <span>Lodge</span>
-                        </a>
+                        </Link>
                         <button
                             className="navbar-toggler"
                             type="button"
@@ -24,30 +26,30 @@ export const HomePage = () => {
                             <div className="d-flex ml-auto flex-column flex-lg-row align-items-center">
                                 <ul className="navbar-nav  ">
                                     <li className="nav-item active">
-                                        <a className="nav-link" href="index.html">
+                                        <Link to='/' className="nav-link">
                                             Home <span className="sr-only">(current)</span>
-                                        </a>
+                                        </Link>
                                     </li>
                                     <li className="nav-item">
-                                        <a className="nav-link" href="about.html">
+                                        <Link to='/about' className="nav-link" >
                                             {" "}
                                             About
-                                        </a>
+                                        </Link>
                                     </li>
                                     <li className="nav-item">
-                                        <a className="nav-link" href="jewellery.html">
+                                        <Link to='/jewellery' className="nav-link" >
                                             Jewellery{" "}
-                                        </a>
+                                        </Link>
                                     </li>
                                     <li className="nav-item">
-                                        <a className="nav-link" href="contact.html">
+                                        <Link to='/contacts' className="nav-link">
                                             Contact us
-                                        </a>
+                                        </Link>
                                     </li>
                                     <li className="nav-item">
-                                        {/*<a className="nav-link" href="#">
-                        Login
-                      </a>*/}
+                                        <Link to='/login' className="nav-link" >
+                                            Login
+                                        </Link>
                                     </li>
                                 </ul>
                             </div>
