@@ -36,8 +36,8 @@ export const About = () => {
                                         </Link>
                                     </li>
                                     <li className="nav-item">
-                                        <Link className="nav-link" to="/jewelery">
-                                            Jewelery{" "}
+                                        <Link className="nav-link" to="/jewellery">
+                                            Jewellery{" "}
                                         </Link>
                                     </li>
                                     <li className="nav-item">

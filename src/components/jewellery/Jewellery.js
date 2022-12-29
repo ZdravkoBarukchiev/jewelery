@@ -1,15 +1,15 @@
 import { Link } from "react-router-dom"
-export const Jewelery = () => {
+export const Jewellery = () => {
     return (<body class="sub_page">
         <div className="hero_area">
             {/* header section strats */}
             <header className="header_section">
                 <div className="container-fluid">
                     <nav className="navbar navbar-expand-lg custom_nav-container ">
-                        <a className="navbar-brand" href="index.html">
+                        <Link className="navbar-brand" to="/">
                             <img src="images/logo.png" alt="" />
                             <span>Lodge</span>
-                        </a>
+                        </Link>
                         <button
                             className="navbar-toggler"
                             type="button"
@@ -36,8 +36,8 @@ export const Jewelery = () => {
                                         </Link>
                                     </li>
                                     <li className="nav-item">
-                                        <Link className="nav-link" to='/jewelery'>
-                                            Jewelery{" "}
+                                        <Link className="nav-link" to='/jewellery'>
+                                            Jewellery{" "}
                                         </Link>
                                     </li>
                                     <li className="nav-item">

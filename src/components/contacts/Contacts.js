@@ -6,7 +6,7 @@ export const Contacts = () => {
       <header className="header_section">
         <div className="container-fluid">
           <nav className="navbar navbar-expand-lg custom_nav-container ">
-            <Link className="navbar-brand" href="index.html">
+            <Link className="navbar-brand" to="/">
               <img src="images/logo.png" alt="" />
               <span>Lodge</span>
             </Link>
@@ -36,8 +36,8 @@ export const Contacts = () => {
                     </Link>
                   </li>
                   <li className="nav-item">
-                    <Link className="nav-link" to="/jewelery">
-                      Jewelery{" "}
+                    <Link className="nav-link" to="/jewellery">
+                      Jewellery{" "}
                     </Link>
                   </li>
                   <li className="nav-item">

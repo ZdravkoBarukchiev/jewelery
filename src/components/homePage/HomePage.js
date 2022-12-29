@@ -37,7 +37,7 @@ export const HomePage = () => {
                                         </Link>
                                     </li>
                                     <li className="nav-item">
-                                        <Link to='/jewelery' className="nav-link" >
+                                        <Link to='/jewellery' className="nav-link" >
                                             Jewellery{" "}
                                         </Link>
                                     </li>
@@ -130,7 +130,7 @@ export const HomePage = () => {
                                                 torquent per conubia nostra
                                             </p>
                                             <div>
-                                                <Link to="/jewelery">Shop Now</Link>
+                                                <Link to="/jewellery">Shop Now</Link>
                                             </div>
                                         </div>
                                     </div>
