@@ -1,4 +1,4 @@
-export const Jewellery = () => {
+export const Jewelery = () => {
     return (<body class="sub_page">
         <div className="hero_area">
             {/* header section strats */}
