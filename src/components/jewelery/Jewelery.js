@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom"
 export const Jewelery = () => {
     return (<body class="sub_page">
         <div className="hero_area">
@@ -24,30 +25,30 @@ export const Jewelery = () => {
                             <div className="d-flex ml-auto flex-column flex-lg-row align-items-center">
                                 <ul className="navbar-nav  ">
                                     <li className="nav-item active">
-                                        <a className="nav-link" href="index.html">
+                                        <Link className="nav-link" to="/">
                                             Home <span className="sr-only">(current)</span>
-                                        </a>
+                                        </Link>
                                     </li>
                                     <li className="nav-item">
-                                        <a className="nav-link" href="about.html">
+                                        <Link className="nav-link" to="/about">
                                             {" "}
                                             About
-                                        </a>
+                                        </Link>
                                     </li>
                                     <li className="nav-item">
-                                        <a className="nav-link" href="jewellery.html">
-                                            Jewellery{" "}
-                                        </a>
+                                        <Link className="nav-link" to='/jewelery'>
+                                            Jewelery{" "}
+                                        </Link>
                                     </li>
                                     <li className="nav-item">
-                                        <a className="nav-link" href="contact.html">
+                                        <Link className="nav-link" to="/contacts">
                                             Contact us
-                                        </a>
+                                        </Link>
                                     </li>
                                     <li className="nav-item">
-                                        {/*} <a className="nav-link" href="#">
+                                        <Link className="nav-link" to="/">
                                             Login
-                                        </a>*/}
+                                        </Link>
                                     </li>
                                 </ul>
                             </div>
