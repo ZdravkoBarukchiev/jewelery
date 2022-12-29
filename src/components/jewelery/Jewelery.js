@@ -53,10 +53,10 @@ export const Jewelery = () => {
                                 </ul>
                             </div>
                             <div className="quote_btn-container ">
-                                {/*<a href="">
+                                <Link to="/">
                                     <img src="images/cart.png" alt="" />
                                     <div className="cart_number">0</div>
-                                </a>*/}
+                                </Link>
                                 <form className="form-inline">
                                     <button
                                         className="btn  my-2 my-sm-0 nav_search-btn"
