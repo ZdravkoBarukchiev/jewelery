@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom"
 export const Contacts = () => {
   return (<body class="sub_page">
     <div className="hero_area">
@@ -5,10 +6,10 @@ export const Contacts = () => {
       <header className="header_section">
         <div className="container-fluid">
           <nav className="navbar navbar-expand-lg custom_nav-container ">
-            <a className="navbar-brand" href="index.html">
+            <Link className="navbar-brand" href="index.html">
               <img src="images/logo.png" alt="" />
               <span>Lodge</span>
-            </a>
+            </Link>
             <button
               className="navbar-toggler"
               type="button"
@@ -24,38 +25,38 @@ export const Contacts = () => {
               <div className="d-flex ml-auto flex-column flex-lg-row align-items-center">
                 <ul className="navbar-nav  ">
                   <li className="nav-item active">
-                    <a className="nav-link" href="index.html">
+                    <Link className="nav-link" to="/">
                       Home <span className="sr-only">(current)</span>
-                    </a>
+                    </Link>
                   </li>
                   <li className="nav-item">
-                    <a className="nav-link" href="about.html">
+                    <Link className="nav-link" to="/about">
                       {" "}
                       About
-                    </a>
+                    </Link>
                   </li>
                   <li className="nav-item">
-                    <a className="nav-link" href="jewellery.html">
-                      Jewellery{" "}
-                    </a>
+                    <Link className="nav-link" to="/jewelery">
+                      Jewelery{" "}
+                    </Link>
                   </li>
                   <li className="nav-item">
-                    <a className="nav-link" href="contact.html">
+                    <Link className="nav-link" to="/contacts">
                       Contact us
-                    </a>
+                    </Link>
                   </li>
                   <li className="nav-item">
-                    {/* <a className="nav-link" href="#">
+                    <Link className="nav-link" to="/">
                     Login
-                  </a>*/}
+                  </Link>
                   </li>
                 </ul>
               </div>
               <div className="quote_btn-container ">
-                {/*<a href="">
+                <Link to="/">
                 <img src="images/cart.png" alt="" />
                 <div className="cart_number">0</div>
-              </a>*/}
+              </Link>
                 <form className="form-inline">
                   <button
                     className="btn  my-2 my-sm-0 nav_search-btn"
