@@ -91,7 +91,7 @@ export const About = () => {
                                 nostrud
                             </p>
                             <div>
-                                {/*<a href="">Read More</a>*/}
+                                <Link to="/about">Read More</Link>
                             </div>
                         </div>
                     </div>
@@ -104,8 +104,8 @@ export const About = () => {
             </div>
         </section>
         {/* end about section */}
-         {/* client section */}
-         <section className="client_section">
+        {/* client section */}
+        <section className="client_section">
             <div className="container">
                 <div className="heading_container">
                     <h2>Testimonial</h2>
@@ -137,65 +137,25 @@ export const About = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className="carousel-item">
-                            <div className="client_container">
-                                <div className="client-id">
-                                    <div className="img-box">
-                                        <img src="images/client.png" alt="" />
-                                    </div>
-                                    <div className="name">
-                                        <h5>Aliqua</h5>
-                                        <h6>Consectetur adipiscing</h6>
-                                    </div>
-                                </div>
-                                <div className="detail-box">
-                                    <p>
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                                        do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                                        Ut enim ad minim veniam, quis nostrudLorem ipsum
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="carousel-item">
-                            <div className="client_container">
-                                <div className="client-id">
-                                    <div className="img-box">
-                                        <img src="images/client.png" alt="" />
-                                    </div>
-                                    <div className="name">
-                                        <h5>Aliqua</h5>
-                                        <h6>Consectetur adipiscing</h6>
-                                    </div>
-                                </div>
-                                <div className="detail-box">
-                                    <p>
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                                        do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                                        Ut enim ad minim veniam, quis nostrudLorem ipsum
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
                     </div>
-                    <a
+                    <Link
                         className="carousel-control-prev"
-                        href="#carouselExampleControls"
+                        to="#carouselExampleControls"
                         role="button"
                         data-slide="prev"
                     >
                         <span className="carousel-control-prev-icon" aria-hidden="true" />
                         <span className="sr-only">Previous</span>
-                    </a>
-                    <a
+                    </Link>
+                    <Link
                         className="carousel-control-next"
-                        href="#carouselExampleControls"
+                        to="#carouselExampleControls"
                         role="button"
                         data-slide="next"
                     >
                         <span className="carousel-control-next-icon" aria-hidden="true" />
                         <span className="sr-only">Next</span>
-                    </a>
+                    </Link>
                 </div>
             </div>
         </section>
@@ -207,34 +167,34 @@ export const About = () => {
                     <div className="row">
                         <div className="col-md-3">
                             <div className="info_logo">
-                                {/* <a href="">
+                                <Link to="/">
                                     <img src="images/logo.png" alt="" />
                                     <span>Lodge</span>
-                                </a>*/}
+                                </Link>
                             </div>
                         </div>
                         <div className="col-md-3">
                             <div className="info_contact">
-                                {/* <a href="">
+                                <Link to="/contacts">
                                     <img src="images/location.png" alt="" />
                                     <span>Address</span>
-                                </a>*/}
+                                </Link>
                             </div>
                         </div>
                         <div className="col-md-3">
                             <div className="info_contact">
-                                {/*<a href="">
+                                <Link to="/">
                                     <img src="images/phone.png" alt="" />
                                     <span>+01 1234567890</span>
-                                </a>*/}
+                                </Link>
                             </div>
                         </div>
                         <div className="col-md-3">
                             <div className="info_contact">
-                                {/*<a href="">
+                                <Link to="/">
                                     <img src="images/mail.png" alt="" />
                                     <span>demo@gmail.com</span>
-                                </a>*/}
+                                </Link>
                             </div>
                         </div>
                     </div>
@@ -257,18 +217,18 @@ export const About = () => {
                             <h5 className="info_heading">Follow Us</h5>
                         </div>
                         <div className="social_box">
-                            {/*<a href="">
+                            <Link to="/">
                                 <img src="images/fb.png" alt="" />
-                            </a>
-                            <a href="">
+                            </Link>
+                            <Link to="/">
                                 <img src="images/twitter.png" alt="" />
-                            </a>
-                            <a href="">
+                            </Link>
+                            <Link to="/">
                                 <img src="images/linkedin.png" alt="" />
-                            </a>
-                            <a href="">
+                            </Link>
+                            <Link to="/">
                                 <img src="images/insta.png" alt="" />
-                            </a>*/}
+                            </Link>
                         </div>
                     </div>
                 </div>
