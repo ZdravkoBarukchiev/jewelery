@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom"
+import { Link } from "react-router-dom";
 
 export const HomePage = () => {
     return (<body>
@@ -141,58 +141,6 @@ export const HomePage = () => {
                                     </div>
                                 </div>
                             </div>
-                            <div className="carousel-item ">
-                                <div className="row">
-                                    <div className="col-md-6">
-                                        <div className="detail_box">
-                                            <h2>
-                                                <span> New Collection</span>
-                                                <hr />
-                                            </h2>
-                                            <h1>Jewellery</h1>
-                                            <p>
-                                                Lorem ipsum dolor sit amet consec tetur adipiscing elit
-                                                elit at felislacinia aptent taciti sociosqu ad litora
-                                                torquent per conubia nostra
-                                            </p>
-                                            <div>
-                                                {/*<a href="">Shop Now</a>*/}
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="col-md-6">
-                                        <div className="img-box">
-                                            <img src="images/slider-img.png" alt="" />
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="carousel-item ">
-                                <div className="row">
-                                    <div className="col-md-6">
-                                        <div className="detail_box">
-                                            <h2>
-                                                <span> New Collection</span>
-                                                <hr />
-                                            </h2>
-                                            <h1>Jewellery</h1>
-                                            <p>
-                                                Lorem ipsum dolor sit amet consec tetur adipiscing elit
-                                                elit at felislacinia aptent taciti sociosqu ad litora
-                                                torquent per conubia nostra
-                                            </p>
-                                            <div>
-                                                {/*<a href="">Shop Now</a>*/}
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="col-md-6">
-                                        <div className="img-box">
-                                            <img src="images/slider-img.png" alt="" />
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -206,34 +154,34 @@ export const HomePage = () => {
                     <div className="row">
                         <div className="col-md-3">
                             <div className="info_logo">
-                                {/*<a href="">
-                    <img src="images/logo.png" alt="" />
-                    <span>Lodge</span>
-                  </a>*/}
+                                <Link to="/">
+                                    <img src="images/logo.png" alt="" />
+                                    <span>Lodge</span>
+                                </Link>
                             </div>
                         </div>
                         <div className="col-md-3">
                             <div className="info_contact">
-                                {/*<a href="">
-                    <img src="images/location.png" alt="" />
-                    <span>Address</span>
-                  </a>*/}
+                                <Link to="/contacts">
+                                    <img src="images/location.png" alt="" />
+                                    <span>Address</span>
+                                </Link>
                             </div>
                         </div>
                         <div className="col-md-3">
                             <div className="info_contact">
-                                {/*<a href="">
-                    <img src="images/phone.png" alt="" />
-                    <span>+01 1234567890</span>
-                  </a>*/}
+                                <Link to="/">
+                                    <img src="images/phone.png" alt="" />
+                                    <span>+01 1234567890</span>
+                                </Link>
                             </div>
                         </div>
                         <div className="col-md-3">
                             <div className="info_contact">
-                                {/*<a href="">
-                    <img src="images/mail.png" alt="" />
-                    <span>demo@gmail.com</span>
-                  </a>*/}
+                                <Link to="/">
+                                    <img src="images/mail.png" alt="" />
+                                    <span>demo@gmail.com</span>
+                                </Link>
                             </div>
                         </div>
                     </div>
@@ -256,18 +204,18 @@ export const HomePage = () => {
                             <h5 className="info_heading">Follow Us</h5>
                         </div>
                         <div className="social_box">
-                            {/*<a href="">
-                  <img src="images/fb.png" alt="" />
-                </a>
-                <a href="">
-                  <img src="images/twitter.png" alt="" />
-                </a>
-                <a href="">
-                  <img src="images/linkedin.png" alt="" />
-                </a>
-                <a href="">
-                  <img src="images/insta.png" alt="" />
-                </a>*/}
+                            <Link to="/">
+                                <img src="images/fb.png" alt="" />
+                            </Link>
+                            <Link to="/">
+                                <img src="images/twitter.png" alt="" />
+                            </Link>
+                            <Link to="/">
+                                <img src="images/linkedin.png" alt="" />
+                            </Link>
+                            <Link to="/">
+                                <img src="images/insta.png" alt="" />
+                            </Link>
                         </div>
                     </div>
                 </div>
