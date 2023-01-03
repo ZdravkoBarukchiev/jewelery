@@ -51,6 +51,11 @@ export const HomePage = () => {
                                             Login
                                         </Link>
                                     </li>
+                                    <li className="nav-item">
+                                        <Link to='/register' className="nav-link" >
+                                            Register
+                                        </Link>
+                                    </li>
                                 </ul>
                             </div>
                             <div className="quote_btn-container ">
@@ -229,7 +234,7 @@ export const HomePage = () => {
                 <a href="https://html.design/">Free Html Templates</a>
             </p>
         </section>
-        {/* footer section */}
+        {/* end footer section */}
     </body>
 
     )

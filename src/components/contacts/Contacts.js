@@ -47,16 +47,21 @@ export const Contacts = () => {
                   </li>
                   <li className="nav-item">
                     <Link className="nav-link" to="/login">
-                    Login
-                  </Link>
+                      Login
+                    </Link>
+                  </li>
+                  <li className="nav-item">
+                    <Link className="nav-link" to="/register">
+                      Register
+                    </Link>
                   </li>
                 </ul>
               </div>
               <div className="quote_btn-container ">
                 <Link to="/">
-                <img src="images/cart.png" alt="" />
-                <div className="cart_number">0</div>
-              </Link>
+                  <img src="images/cart.png" alt="" />
+                  <div className="cart_number">0</div>
+                </Link>
                 <form className="form-inline">
                   <button
                     className="btn  my-2 my-sm-0 nav_search-btn"
@@ -108,15 +113,15 @@ export const Contacts = () => {
           <div className="col-md-6">
             <div className="map_container">
               <div className="map-responsive">
-                { <iframe
-                title='map'
-                src="https://www.google.com/maps/embed/v1/place?key=AIzaSyA0s1a7phLN0iaD6-UE7m4qP-z21pH0eSc&q=Eiffel+Tower+Paris+France"
-                width={600}
-                height={300}
-                frameBorder={0}
-                style={{ border: 0, width: "100%", height: "100%" }}
-                allowFullScreen=""
-              />}
+                {<iframe
+                  title='map'
+                  src="https://www.google.com/maps/embed/v1/place?key=AIzaSyA0s1a7phLN0iaD6-UE7m4qP-z21pH0eSc&q=Eiffel+Tower+Paris+France"
+                  width={600}
+                  height={300}
+                  frameBorder={0}
+                  style={{ border: 0, width: "100%", height: "100%" }}
+                  allowFullScreen=""
+                />}
               </div>
             </div>
           </div>
@@ -206,7 +211,7 @@ export const Contacts = () => {
         <a href="https://html.design/">Free Html Templates</a>
       </p>
     </section>
-    {/* footer section */}
+    {/* end footer section */}
   </body>
   )
 

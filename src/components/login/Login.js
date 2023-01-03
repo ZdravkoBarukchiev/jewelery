@@ -49,6 +49,11 @@ export const Login = () => {
                                         Login
                                     </Link>
                                 </li>
+                                <li className="nav-item">
+                                    <Link to='/register' className="nav-link" >
+                                        Register
+                                    </Link>
+                                </li>
                             </ul>
                         </div>
                         <div className="quote_btn-container ">
@@ -68,6 +73,7 @@ export const Login = () => {
             </div>
         </header>
         {/* end header section */}
+        {/* login section*/}
         <section className="contact_section layout_padding">
             <div className="design-box">
                 <img src="images/design-2.png" alt="" />
@@ -97,6 +103,7 @@ export const Login = () => {
                 </div>
             </div>
         </section>
+        {/*end login section*/}
     </div>
     )
 }

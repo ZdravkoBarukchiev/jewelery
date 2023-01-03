@@ -50,6 +50,11 @@ export const Jewellery = () => {
                                             Login
                                         </Link>
                                     </li>
+                                    <li className="nav-item">
+                                        <Link className="nav-link" to="/register">
+                                            Register
+                                        </Link>
+                                    </li>
                                 </ul>
                             </div>
                             <div className="quote_btn-container ">
@@ -277,7 +282,7 @@ export const Jewellery = () => {
                 <a href="https://html.design/">Free Html Templates</a>
             </p>
         </section>
-        {/* footer section */}
+        {/* end footer section */}
 
     </body>)
 
