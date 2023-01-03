@@ -1,5 +1,21 @@
 import { Link } from "react-router-dom"
 export const Login = () => {
+    const onSubmit = (e) => {
+        e.preventDefault()
+        const { email, password } = Object.fromEntries(new FormData(e.target));
+    
+        const url = "http://localhost:3030/users/login";
+        fetch(url, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ email, password }),
+          })
+            .then((res) => res.json())
+            .then((result) => {
+                console.log(result);
+            });
+
+    }
     return (<div className="hero_area">
         {/* header section strats */}
         <header className="header_section">
@@ -86,13 +102,13 @@ export const Login = () => {
             <div className="container">
                 <div className="row">
                     <div className="col-md-6">
-                        <form action="">
+                        <form onSubmit={onSubmit}>
                             <div>
-                                <input type="text" placeholder="Username" />
+                                <input type="email" name='email' placeholder="email" />
                             </div>
 
                             <div>
-                                <input type="password" placeholder="Password" />
+                                <input type="password" name='password' placeholder="Password" />
                             </div>
 
                             <div className="d-flex ">
