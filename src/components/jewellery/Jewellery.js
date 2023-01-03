@@ -126,7 +126,7 @@ export const Jewellery = () => {
                 <div className="price_container">
                     <div className="box">
                         <div className="name">
-                            <h6>Diamond Ring</h6>
+                            <h6>Diamond Bracelet</h6>
                         </div>
                         <div className="img-box">
                             <img src="images/p-1.png" alt="" />
@@ -135,7 +135,7 @@ export const Jewellery = () => {
                             <h5>
                                 $<span>1000.00</span>
                             </h5>
-                            {/*<a href="">Buy Now</a>*/}
+                            <Link to="/">Buy Now</Link>
                         </div>
                     </div>
                     <div className="box">
@@ -149,12 +149,12 @@ export const Jewellery = () => {
                             <h5>
                                 $<span>1000.00</span>
                             </h5>
-                            {/*<a href="">Buy Now</a>*/}
+                            <Link to="/">Buy Now</Link>
                         </div>
                     </div>
                     <div className="box">
                         <div className="name">
-                            <h6>Diamond Ring</h6>
+                            <h6>Diamond Earings</h6>
                         </div>
                         <div className="img-box">
                             <img src="images/i-3.png" alt="" />
@@ -163,14 +163,14 @@ export const Jewellery = () => {
                             <h5>
                                 $<span>1000.00</span>
                             </h5>
-                            {/*<a href="">Buy Now</a>*/}
+                            <Link to="/">Buy Now</Link>
                         </div>
                     </div>
                 </div>
                 <div className="d-flex justify-content-center">
-                    {/*<a href="" className="price_btn">
+                    <Link to="/" className="price_btn">
                         See More
-                     </a>*/}
+                    </Link>
                 </div>
             </div>
         </section>
@@ -187,7 +187,7 @@ export const Jewellery = () => {
                             <div className="detail-box">
                                 <h4>special</h4>
                                 <h2>Wedding Ring</h2>
-                                {/*<a href="">Buy Now</a>*/}
+                                <Link to="/">Buy Now</Link>
                             </div>
                         </div>
                         <div className="col-md-7">
@@ -207,34 +207,34 @@ export const Jewellery = () => {
                     <div className="row">
                         <div className="col-md-3">
                             <div className="info_logo">
-                                {/*<a href="">
+                                <Link to="/">
                                     <img src="images/logo.png" alt="" />
                                     <span>Lodge</span>
-                                </a>*/}
+                                </Link>
                             </div>
                         </div>
                         <div className="col-md-3">
                             <div className="info_contact">
-                                {/* <a href="">
+                                <Link to="/contacts">
                                     <img src="images/location.png" alt="" />
                                     <span>Address</span>
-                                </a>*/}
+                                </Link>
                             </div>
                         </div>
                         <div className="col-md-3">
                             <div className="info_contact">
-                                {/*<a href="">
+                                <Link to="/">
                                     <img src="images/phone.png" alt="" />
                                     <span>+01 1234567890</span>
-                                </a>*/}
+                                </Link>
                             </div>
                         </div>
                         <div className="col-md-3">
                             <div className="info_contact">
-                                {/*<a href="">
+                                <Link to="/">
                                     <img src="images/mail.png" alt="" />
                                     <span>demo@gmail.com</span>
-                                </a>*/}
+                                </Link>
                             </div>
                         </div>
                     </div>
@@ -257,18 +257,18 @@ export const Jewellery = () => {
                             <h5 className="info_heading">Follow Us</h5>
                         </div>
                         <div className="social_box">
-                            {/*} <a href="">
+                            <Link to="/">
                                 <img src="images/fb.png" alt="" />
-                            </a>
-                            <a href="">
+                            </Link>
+                            <Link to="/">
                                 <img src="images/twitter.png" alt="" />
-                            </a>
-                            <a href="">
+                            </Link>
+                            <Link to="/">
                                 <img src="images/linkedin.png" alt="" />
-                            </a>
-                            <a href="">
+                            </Link>
+                            <Link to="/">
                                 <img src="images/insta.png" alt="" />
-                            </a>*/}
+                            </Link>
                         </div>
                     </div>
                 </div>
