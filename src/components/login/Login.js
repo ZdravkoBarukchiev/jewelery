@@ -3,13 +3,13 @@ export const Login = () => {
     const onSubmit = (e) => {
         e.preventDefault()
         const { email, password } = Object.fromEntries(new FormData(e.target));
-    
+
         const url = "http://localhost:3030/users/login";
         fetch(url, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ email, password }),
-          })
+        })
             .then((res) => res.json())
             .then((result) => {
                 console.log(result);
@@ -104,7 +104,7 @@ export const Login = () => {
                     <div className="col-md-6">
                         <form onSubmit={onSubmit}>
                             <div>
-                                <input type="email" name='email' placeholder="email" />
+                                <input type="email" name='email' placeholder="Email" />
                             </div>
 
                             <div>

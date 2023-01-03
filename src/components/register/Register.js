@@ -89,9 +89,6 @@ export const Register = () => {
                         <div className="col-md-6">
                             <form action="">
                                 <div>
-                                    <input type="text" placeholder="Username" />
-                                </div>
-                                <div>
                                     <input type="email" placeholder="Email" />
                                 </div>
                                 <div>
