@@ -17,7 +17,7 @@ export const Login = () => {
 
     }
     return (<div className="hero_area">
-        {/* header section strats */}
+        {/* header section */}
         <header className="header_section">
             <div className="container-fluid">
                 <nav className="navbar navbar-expand-lg custom_nav-container ">
