@@ -27,39 +27,65 @@ export const About = () => {
                         <div className="collapse navbar-collapse" id="navbarSupportedContent">
                             <div className="d-flex ml-auto flex-column flex-lg-row align-items-center">
                                 {loginData._id && <span>{loginData.email}</span>}
-                                <ul className="navbar-nav  ">
-                                    <li className="nav-item active">
-                                        <Link className="nav-link" to="/">
-                                            Home <span className="sr-only">(current)</span>
-                                        </Link>
-                                    </li>
-                                    <li className="nav-item">
-                                        <Link className="nav-link" to="/about">
-                                            {" "}
-                                            About
-                                        </Link>
-                                    </li>
-                                    <li className="nav-item">
-                                        <Link className="nav-link" to="/jewellery">
-                                            Jewellery{" "}
-                                        </Link>
-                                    </li>
-                                    <li className="nav-item">
-                                        <Link className="nav-link" to="/contacts">
-                                            Contact us
-                                        </Link>
-                                    </li>
-                                    <li className="nav-item">
-                                        <Link className="nav-link" to="/login">
-                                            Login
-                                        </Link>
-                                    </li>
-                                    <li className="nav-item">
-                                        <Link className="nav-link" to="/register">
-                                            Register
-                                        </Link>
-                                    </li>
-                                </ul>
+                                {loginData._id ? (
+                                    <ul className="navbar-nav  ">
+                                        <li className="nav-item active">
+                                            <Link to='/' className="nav-link">
+                                                Home <span className="sr-only">(current)</span>
+                                            </Link>
+                                        </li>
+                                        <li className="nav-item">
+                                            <Link to='/about' className="nav-link" >
+                                                {" "}
+                                                About
+                                            </Link>
+                                        </li>
+                                        <li className="nav-item">
+                                            <Link to='/jewellery' className="nav-link" >
+                                                Jewellery{" "}
+                                            </Link>
+                                        </li>
+                                        <li className="nav-item">
+                                            <Link to='/contacts' className="nav-link">
+                                                Contact us
+                                            </Link>
+                                        </li>
+                                    </ul>
+                                ) : (
+                                    <ul className="navbar-nav  ">
+                                        <li className="nav-item active">
+                                            <Link to='/' className="nav-link">
+                                                Home <span className="sr-only">(current)</span>
+                                            </Link>
+                                        </li>
+                                        <li className="nav-item">
+                                            <Link to='/about' className="nav-link" >
+                                                {" "}
+                                                About
+                                            </Link>
+                                        </li>
+                                        <li className="nav-item">
+                                            <Link to='/jewellery' className="nav-link" >
+                                                Jewellery{" "}
+                                            </Link>
+                                        </li>
+                                        <li className="nav-item">
+                                            <Link to='/contacts' className="nav-link">
+                                                Contact us
+                                            </Link>
+                                        </li>
+                                        <li className="nav-item">
+                                            <Link to='/login' className="nav-link" >
+                                                Login
+                                            </Link>
+                                        </li>
+                                        <li className="nav-item">
+                                            <Link to='/register' className="nav-link" >
+                                                Register
+                                            </Link>
+                                        </li>
+                                    </ul>
+                                )}
                             </div>
                             <div className="quote_btn-container ">
                                 <Link to="/">
