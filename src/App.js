@@ -5,11 +5,12 @@ import { HomePage } from './components/homePage/HomePage';
 import { Jewellery } from './components/jewellery/Jewellery';
 import { Login } from './components/login/Login';
 import { Register } from './components/register/Register';
+import { LoginContext } from './context/loginContext';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
+      <LoginContext.Provider>
         <Routes>
           <Route path='/' element={<HomePage />} />
           <Route path='/jewellery' element={<Jewellery />} />
@@ -18,8 +19,7 @@ function App() {
           <Route path='/login' element={<Login />} />
           <Route path='/register' element={<Register />} />
         </Routes>
-
-      </header>
+      </LoginContext.Provider>
     </div>
   );
 }
