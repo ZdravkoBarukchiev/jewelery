@@ -6,11 +6,19 @@ import { Jewellery } from './components/jewellery/Jewellery';
 import { Login } from './components/login/Login';
 import { Register } from './components/register/Register';
 import { LoginContext } from './context/loginContext';
+import { useState } from 'react';
 
 function App() {
+  const [loginData, setLoginData] = useState({});
+  const userLogin = (userData) => {
+    setLoginData(userData);
+  };
+  const userLogout = () => {
+    setLoginData({});
+  };
   return (
     <div className="App">
-      <LoginContext.Provider>
+      <LoginContext.Provider value={{ loginData, userLogin, userLogout }}>
         <Routes>
           <Route path='/' element={<HomePage />} />
           <Route path='/jewellery' element={<Jewellery />} />

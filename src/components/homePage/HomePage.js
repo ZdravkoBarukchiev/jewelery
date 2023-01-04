@@ -1,6 +1,9 @@
 import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { LoginContext } from "../../context/loginContext";
 
 export const HomePage = () => {
+    const { loginData } = useContext(LoginContext);
     return (<body>
         <div className="hero_area">
             {/* header section */}
@@ -24,6 +27,7 @@ export const HomePage = () => {
                         </button>
                         <div className="collapse navbar-collapse" id="navbarSupportedContent">
                             <div className="d-flex ml-auto flex-column flex-lg-row align-items-center">
+                                {loginData._id && <span>{loginData.email}</span>}
                                 <ul className="navbar-nav  ">
                                     <li className="nav-item active">
                                         <Link to='/' className="nav-link">

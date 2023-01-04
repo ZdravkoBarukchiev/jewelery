@@ -1,5 +1,9 @@
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom";
+import { useContext } from "react";
+import { LoginContext } from "../../context/loginContext";
 export const Login = () => {
+    const { userLogin } = useContext(LoginContext)
+    const navigate = useNavigate()
     const onSubmit = (e) => {
         e.preventDefault()
         const { email, password } = Object.fromEntries(new FormData(e.target));
@@ -12,7 +16,8 @@ export const Login = () => {
         })
             .then((res) => res.json())
             .then((result) => {
-                console.log(result);
+                userLogin(result);
+                navigate('/');
             });
 
     }
