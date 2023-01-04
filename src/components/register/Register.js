@@ -1,5 +1,30 @@
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom";
+import { useContext } from "react";
+import { LoginContext } from "../../context/loginContext";
 export const Register = () => {
+    const navigate = useNavigate();
+    const { userLogin } = useContext(LoginContext);
+    const onSubmit = (e) => {
+        e.preventDefault();
+        const formData = new FormData(e.target);
+        const email = formData.get("email");
+        const password = formData.get("password");
+        const confirmPassword = formData.get("confirm-password");
+        const url = "http://localhost:3030/users/register";
+        if (password !== confirmPassword) {
+            return;
+        }
+        fetch(url, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ email, password }),
+        })
+            .then((res) => res.json())
+            .then((result) => {
+                userLogin(result);
+                navigate("/");
+            });
+    };
     return (
         <div className="hero_area">
             {/* header section */}
@@ -87,17 +112,16 @@ export const Register = () => {
                 <div className="container">
                     <div className="row">
                         <div className="col-md-6">
-                            <form action="">
+                            <form onSubmit={onSubmit}>
                                 <div>
-                                    <input type="email" placeholder="Email" />
+                                    <input type="email" name='email' placeholder="Email" />
                                 </div>
                                 <div>
-                                    <input type="password" placeholder="Password" />
+                                    <input type="password" name='password' placeholder="Password" />
                                 </div>
                                 <div>
-                                    <input type="password" placeholder="Confirm Password" />
+                                    <input type="password" name='confirm-password' placeholder="Confirm Password" />
                                 </div>
-
                                 <div className="d-flex ">
                                     <button>Register</button>
                                 </div>
