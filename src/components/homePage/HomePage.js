@@ -51,6 +51,11 @@ export const HomePage = () => {
                                                 Contact us
                                             </Link>
                                         </li>
+                                        <li className="nav-item">
+                                            <Link to='/logout' className="nav-link">
+                                                Logout
+                                            </Link>
+                                        </li>
                                     </ul>
                                 ) : (
                                     <ul className="navbar-nav  ">
