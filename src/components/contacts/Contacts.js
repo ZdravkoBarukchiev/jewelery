@@ -3,6 +3,10 @@ import { useContext } from "react";
 import { LoginContext } from "../../context/loginContext";
 export const Contacts = () => {
   const { loginData } = useContext(LoginContext);
+  const search = (e) => {
+    e.preventDefault()
+    console.log('search');
+  }
   return (<body class="sub_page">
     <div className="hero_area">
       {/* header section */}
@@ -97,7 +101,7 @@ export const Contacts = () => {
                   <img src="images/cart.png" alt="" />
                   <div className="cart_number">0</div>
                 </Link>
-                <form className="form-inline">
+                <form className="form-inline" onSubmit={search}>
                   <button
                     className="btn  my-2 my-sm-0 nav_search-btn"
                     type="submit"

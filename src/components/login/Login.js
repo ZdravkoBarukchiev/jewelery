@@ -2,8 +2,12 @@ import { Link, useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { LoginContext } from "../../context/loginContext";
 export const Login = () => {
-    const { userLogin } = useContext(LoginContext)
-    const navigate = useNavigate()
+    const { userLogin } = useContext(LoginContext);
+    const navigate = useNavigate();
+    const search = (e) => {
+        e.preventDefault()
+        console.log('search');
+    }
     const onSubmit = (e) => {
         e.preventDefault()
         const { email, password } = Object.fromEntries(new FormData(e.target));
@@ -82,7 +86,7 @@ export const Login = () => {
                                 <img src="images/cart.png" alt="" />
                                 <div className="cart_number">0</div>
                             </Link>
-                            <form className="form-inline">
+                            <form className="form-inline" onSubmit={search}>
                                 <button
                                     className="btn  my-2 my-sm-0 nav_search-btn"
                                     type="submit"

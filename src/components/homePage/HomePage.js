@@ -4,6 +4,10 @@ import { LoginContext } from "../../context/loginContext";
 
 export const HomePage = () => {
     const { loginData } = useContext(LoginContext);
+    const search = (e) => {
+        e.preventDefault()
+        console.log('search');
+    }
     return (<body>
         <div className="hero_area">
             {/* header section */}
@@ -98,7 +102,7 @@ export const HomePage = () => {
                                     <img src="images/cart.png" alt="" />
                                     <div className="cart_number">0</div>
                                 </Link>
-                                <form className="form-inline">
+                                <form className="form-inline" onSubmit={search}>
                                     <button
                                         className="btn  my-2 my-sm-0 nav_search-btn"
                                         type="submit"

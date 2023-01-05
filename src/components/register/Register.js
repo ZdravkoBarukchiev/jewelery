@@ -4,6 +4,10 @@ import { LoginContext } from "../../context/loginContext";
 export const Register = () => {
     const navigate = useNavigate();
     const { userLogin } = useContext(LoginContext);
+    const search = (e) => {
+        e.preventDefault()
+        console.log('search');
+    }
     const onSubmit = (e) => {
         e.preventDefault();
         const formData = new FormData(e.target);
@@ -87,7 +91,7 @@ export const Register = () => {
                                     <img src="images/cart.png" alt="" />
                                     <div className="cart_number">0</div>
                                 </Link>
-                                <form className="form-inline">
+                                <form className="form-inline" onSubmit={search}>
                                     <button
                                         className="btn  my-2 my-sm-0 nav_search-btn"
                                         type="submit"
