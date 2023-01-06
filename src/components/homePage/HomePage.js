@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { FooterSection } from "../footerSection/FooterSectoin";
 import { HeaderNavigation } from "../headerNavigation/HeaderNavigation";
 
 export const HomePage = () => {
@@ -157,14 +158,7 @@ export const HomePage = () => {
             </div>
         </section>
         {/* end info_section */}
-        {/* footer section */}
-        <section className="container-fluid footer_section">
-            <p>
-                © <span id="displayYear" /> All Rights Reserved By
-                <a href="https://html.design/">Free Html Templates</a>
-            </p>
-        </section>
-        {/* end footer section */}
+        <FooterSection />
     </body>
 
     )
