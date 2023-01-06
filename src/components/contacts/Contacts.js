@@ -4,9 +4,7 @@ import { HeaderNavigation } from "../headerNavigation/HeaderNavigation";
 export const Contacts = () => {
   return (<body class="sub_page">
     <div className="hero_area">
-      {/* header section */}
       <HeaderNavigation />
-      {/* end header section */}
     </div>
     {/* contact section */}
     <section className="contact_section layout_padding">

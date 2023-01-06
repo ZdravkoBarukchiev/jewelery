@@ -29,10 +29,7 @@ export const Register = () => {
     };
     return (
         <div className="hero_area">
-            {/* header section */}
             <HeaderNavigation />
-            {/* end header section */}
-            {/* register section */}
             <section className="contact_section layout_padding">
                 <div className="design-box">
                     <img src="images/design-2.png" alt="" />
@@ -63,7 +60,6 @@ export const Register = () => {
                     </div>
                 </div>
             </section>
-            {/* end register section */}
         </div>
     )
 }
