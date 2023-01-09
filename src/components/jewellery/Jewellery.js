@@ -2,8 +2,16 @@ import { Link } from "react-router-dom";
 import { HeaderNavigation } from "../headerNavigation/HeaderNavigation";
 import { FooterSection } from "../footerSection/FooterSectoin";
 import { InfoSection } from "../infoSection/InfoSection";
+import { useState, useEffect } from "react";
 
 export const Jewellery = () => {
+    const [jewellery, setJewellery] = useState([]);
+    useEffect(() => {
+        fetch("http://localhost:3030/data/jewellery")
+            .then((res) => res.json())
+            .then((result) => setJewellery(result));
+    }, []);
+    console.log(jewellery);
 
     return (<body class="sub_page">
         <div className="hero_area">
