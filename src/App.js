@@ -5,6 +5,7 @@ import { HomePage } from './components/homePage/HomePage';
 import { Jewellery } from './components/jewellery/Jewellery';
 import { Login } from './components/login/Login';
 import { Register } from './components/register/Register';
+import { Cart } from './components/cart/Cart';
 import { Logout } from './components/logout/Logout';
 import { LoginContext } from './context/loginContext';
 import { useState } from 'react';
@@ -28,6 +29,7 @@ function App() {
           <Route path='/login' element={<Login />} />
           <Route path='/register' element={<Register />} />
           <Route path='/logout' element={<Logout />} />
+          <Route path='/cart' element={<Cart />} />
         </Routes>
       </LoginContext.Provider>
     </div>

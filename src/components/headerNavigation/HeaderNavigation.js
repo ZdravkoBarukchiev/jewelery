@@ -96,7 +96,7 @@ export const HeaderNavigation = () => {
                             )}
                         </div>
                         <div className="quote_btn-container ">
-                            <Link to="/">
+                            <Link to="/cart">
                                 <img src="images/cart.png" alt="" />
                                 <div className="cart_number">0</div>
                             </Link>
