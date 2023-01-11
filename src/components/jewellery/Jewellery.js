@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { HeaderNavigation } from "../headerNavigation/HeaderNavigation";
 import { FooterSection } from "../footerSection/FooterSectoin";
 import { InfoSection } from "../infoSection/InfoSection";
+import { JewelleryItem } from "./jewelleryItem/JewelleryItem";
 import { useState, useEffect } from "react";
 
 export const Jewellery = () => {
@@ -65,48 +66,9 @@ export const Jewellery = () => {
                     <h2>Our Jewellery Price</h2>
                 </div>
                 <div className="price_container">
-                    <div className="box">
-                        <div className="name">
-                            <h6>Diamond Bracelet</h6>
-                        </div>
-                        <div className="img-box">
-                            <img src="images/p-1.png" alt="" />
-                        </div>
-                        <div className="detail-box">
-                            <h5>
-                                $<span>1000.00</span>
-                            </h5>
-                            <Link to="/">Buy Now</Link>
-                        </div>
-                    </div>
-                    <div className="box">
-                        <div className="name">
-                            <h6>Diamond Ring</h6>
-                        </div>
-                        <div className="img-box">
-                            <img src="images/i-2.png" alt="" />
-                        </div>
-                        <div className="detail-box">
-                            <h5>
-                                $<span>1000.00</span>
-                            </h5>
-                            <Link to="/">Buy Now</Link>
-                        </div>
-                    </div>
-                    <div className="box">
-                        <div className="name">
-                            <h6>Diamond Earings</h6>
-                        </div>
-                        <div className="img-box">
-                            <img src="images/i-3.png" alt="" />
-                        </div>
-                        <div className="detail-box">
-                            <h5>
-                                $<span>1000.00</span>
-                            </h5>
-                            <Link to="/">Buy Now</Link>
-                        </div>
-                    </div>
+                    {jewellery.map((x) =>
+                        <JewelleryItem name={x.title} price={x.price} image={x.imageUrl} />
+                    )}
                 </div>
                 <div className="d-flex justify-content-center">
                     <Link to="/" className="price_btn">

@@ -1368,21 +1368,18 @@
         jewellery: {
             "ff436770-76c5-40e2-b231-77409eda7a61": {
                 "title": "Bracelet",
-                "imageUrl": "images/i-1.png",
+                "imageUrl": "images/p-1.png",
                 "price": "1000",
-                "_createdOn": 1617194128618,
             },
             "1840a313-225c-416a-817a-9954d4609f7c": {
                 "title": "Ring",
                 "imageUrl": "images/i-2.png",
                 "price": "1000",
-                "_createdOn": 1617194210928,
             },
             "126777f5-3277-42ad-b874-76d043b069cb": {
                 "title": "Earings",
-                "imageUrl": "images/i-2.png",
+                "imageUrl": "images/i-3.png",
                 "price": "1000",
-                "_createdOn": 1617194295474,
             }
         }
     };
