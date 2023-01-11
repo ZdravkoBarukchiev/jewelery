@@ -12,9 +12,10 @@ export const Logout = () => {
             headers: {
                 "X-Authorization": loginData.accessToken,
             },
-        });
-        userLogout();
-        navigate("/");
+        }).then(() => {
+            userLogout();
+            navigate("/");
+        })
     }, [userLogout, navigate, loginData.accessToken]);
     return null;
 };

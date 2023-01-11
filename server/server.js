@@ -76,7 +76,7 @@
             console.info(`<< ${req.method} ${req.url}`);
 
             // Redirect fix for admin panel relative paths
-            if (req.url.slice(-6) == '/admin') {
+            if (req.url.slice(-6) === '/admin') {
                 res.writeHead(302, {
                     'Location': `http://${req.headers.host}/admin/`
                 });
@@ -92,7 +92,7 @@
             let context;
 
             // NOTE: the OPTIONS method results in undefined result and also it never processes plugins - keep this in mind
-            if (method == 'OPTIONS') {
+            if (method === 'OPTIONS') {
                 Object.assign(headers, {
                     'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS',
                     'Access-Control-Allow-Credentials': false,
@@ -118,7 +118,7 @@
             }
 
             res.writeHead(status, headers);
-            if (context != undefined && context.util != undefined && context.util.throttle) {
+            if (context !== undefined && context.util !== undefined && context.util.throttle) {
                 await new Promise(r => setTimeout(r, 500 + Math.random() * 500));
             }
             res.end(result);
@@ -131,9 +131,9 @@
 
             async function handle(context) {
                 const { serviceName, tokens, query, body } = await parseRequest(req);
-                if (serviceName == 'admin') {
+                if (serviceName === 'admin') {
                     return ({ headers, result } = services['admin'](method, tokens, query, body));
-                } else if (serviceName == 'favicon.ico') {
+                } else if (serviceName === 'favicon.ico') {
                     return ({ headers, result } = services['favicon'](method, tokens, query, body));
                 }
 
@@ -175,7 +175,7 @@
         const queryString = url.search.split('?')[1] || '';
         const query = queryString
             .split('&')
-            .filter(s => s != '')
+            .filter(s => s !== '')
             .map(x => x.split('='))
             .reduce((p, [k, v]) => Object.assign(p, { [k]: decodeURIComponent(v) }), {});
         const body = await parseBody(req);
@@ -280,12 +280,12 @@
     }
 
     function matchAndAssignParams(context, name, pattern) {
-        if (pattern == '*') {
+        if (pattern === '*') {
             return true;
-        } else if (pattern[0] == ':') {
+        } else if (pattern[0] === ':') {
             context.params[pattern.slice(1)] = name;
             return true;
-        } else if (name == pattern) {
+        } else if (name === pattern) {
             return true;
         } else {
             return false;
@@ -297,7 +297,7 @@
     function uuid() {
         return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
             let r = Math.random() * 16 | 0,
-                v = c == 'x' ? r : (r & 0x3 | 0x8);
+                v = c === 'x' ? r : (r & 0x3 | 0x8);
             return v.toString(16);
         });
     }
@@ -337,7 +337,7 @@
             // TODO handle collisions, replacement
             let responseData = data;
             for (let token of tokens) {
-                if (responseData.hasOwnProperty(token) == false) {
+                if (responseData.hasOwnProperty(token) === false) {
                     responseData[token] = {};
                 }
                 responseData = responseData[token];
@@ -383,10 +383,10 @@
 
             for (let i = 0; i < tokens.length; i++) {
                 const token = tokens[i];
-                if (responseData.hasOwnProperty(token) == false) {
+                if (responseData.hasOwnProperty(token) === false) {
                     return null;
                 }
-                if (i == tokens.length - 1) {
+                if (i === tokens.length - 1) {
                     const body = responseData[token];
                     delete responseData[token];
                     return body;
@@ -476,7 +476,7 @@
             '<': (prop, value) => record => record[prop] < JSON.parse(value),
             '>=': (prop, value) => record => record[prop] >= JSON.parse(value),
             '>': (prop, value) => record => record[prop] > JSON.parse(value),
-            '=': (prop, value) => record => record[prop] == JSON.parse(value),
+            '=': (prop, value) => record => record[prop] === JSON.parse(value),
             ' like ': (prop, value) => record => record[prop].toLowerCase().includes(JSON.parse(value).toLowerCase()),
             ' in ': (prop, value) => record => JSON.parse(`[${/\((.+?)\)/.exec(value)[1]}]`).includes(record[prop]),
         };
@@ -533,8 +533,8 @@
             if (query.sortBy) {
                 const props = query.sortBy
                     .split(',')
-                    .filter(p => p != '')
-                    .map(p => p.split(' ').filter(p => p != ''))
+                    .filter(p => p !== '')
+                    .map(p => p.split(' ').filter(p => p !== ''))
                     .map(([p, desc]) => ({ prop: p, desc: desc ? true : false }));
 
                 // Sorting priority is from first to last, therefore we sort from last to first
@@ -559,10 +559,10 @@
             }
 
             if (query.distinct) {
-                const props = query.distinct.split(',').filter(p => p != '');
+                const props = query.distinct.split(',').filter(p => p !== '');
                 responseData = Object.values(responseData.reduce((distinct, c) => {
                     const key = props.map(p => c[p]).join('::');
-                    if (distinct.hasOwnProperty(key) == false) {
+                    if (distinct.hasOwnProperty(key) === false) {
                         distinct[key] = c;
                     }
                     return distinct;
@@ -574,7 +574,7 @@
             }
 
             if (query.select) {
-                const props = query.select.split(',').filter(p => p != '');
+                const props = query.select.split(',').filter(p => p !== '');
                 responseData = Array.isArray(responseData) ? responseData.map(transform) : transform(responseData);
 
                 function transform(r) {
@@ -585,12 +585,12 @@
             }
 
             if (query.load) {
-                const props = query.load.split(',').filter(p => p != '');
+                const props = query.load.split(',').filter(p => p !== '');
                 props.map(prop => {
                     const [propName, relationTokens] = prop.split('=');
                     const [idSource, collection] = relationTokens.split(':');
                     console.log(`Loading related records from "${collection}" into "${propName}", joined on "_id"="${idSource}"`);
-                    const storageSource = collection == 'users' ? context.protectedStorage : context.storage;
+                    const storageSource = collection === 'users' ? context.protectedStorage : context.storage;
                     responseData = Array.isArray(responseData) ? responseData.map(transform) : transform(responseData);
 
                     function transform(r) {
@@ -642,7 +642,7 @@
         console.log('Request body:\n', body);
 
         validateRequest(context, tokens);
-        if (tokens.length != 1) {
+        if (tokens.length !== 1) {
             throw new RequestError$1('Missing entry ID');
         }
 
@@ -670,7 +670,7 @@
         console.log('Request body:\n', body);
 
         validateRequest(context, tokens);
-        if (tokens.length != 1) {
+        if (tokens.length !== 1) {
             throw new RequestError$1('Missing entry ID');
         }
 
@@ -696,7 +696,7 @@
 
     function del(context, tokens, query, body) {
         validateRequest(context, tokens);
-        if (tokens.length != 1) {
+        if (tokens.length !== 1) {
             throw new RequestError$1('Missing entry ID');
         }
 
@@ -752,10 +752,10 @@
 
     var require$$0 = "<!DOCTYPE html>\r\n<html lang=\"en\">\r\n<head>\r\n    <meta charset=\"UTF-8\">\r\n    <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\r\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\r\n    <title>SUPS Admin Panel</title>\r\n    <style>\r\n        * {\r\n            padding: 0;\r\n            margin: 0;\r\n        }\r\n\r\n        body {\r\n            padding: 32px;\r\n            font-size: 16px;\r\n        }\r\n\r\n        .layout::after {\r\n            content: '';\r\n            clear: both;\r\n            display: table;\r\n        }\r\n\r\n        .col {\r\n            display: block;\r\n            float: left;\r\n        }\r\n\r\n        p {\r\n            padding: 8px 16px;\r\n        }\r\n\r\n        table {\r\n            border-collapse: collapse;\r\n        }\r\n\r\n        caption {\r\n            font-size: 120%;\r\n            text-align: left;\r\n            padding: 4px 8px;\r\n            font-weight: bold;\r\n            background-color: #ddd;\r\n        }\r\n\r\n        table, tr, th, td {\r\n            border: 1px solid #ddd;\r\n        }\r\n\r\n        th, td {\r\n            padding: 4px 8px;\r\n        }\r\n\r\n        ul {\r\n            list-style: none;\r\n        }\r\n\r\n        .collection-list a {\r\n            display: block;\r\n            width: 120px;\r\n            padding: 4px 8px;\r\n            text-decoration: none;\r\n            color: black;\r\n            background-color: #ccc;\r\n        }\r\n        .collection-list a:hover {\r\n            background-color: #ddd;\r\n        }\r\n        .collection-list a:visited {\r\n            color: black;\r\n        }\r\n    </style>\r\n    <script type=\"module\">\nimport { html, render } from 'https://unpkg.com/lit-html?module';\nimport { until } from 'https://unpkg.com/lit-html/directives/until?module';\n\nconst api = {\r\n    async get(url) {\r\n        return json(url);\r\n    },\r\n    async post(url, body) {\r\n        return json(url, {\r\n            method: 'POST',\r\n            headers: { 'Content-Type': 'application/json' },\r\n            body: JSON.stringify(body)\r\n        });\r\n    }\r\n};\r\n\r\nasync function json(url, options) {\r\n    return await (await fetch('/' + url, options)).json();\r\n}\r\n\r\nasync function getCollections() {\r\n    return api.get('data');\r\n}\r\n\r\nasync function getRecords(collection) {\r\n    return api.get('data/' + collection);\r\n}\r\n\r\nasync function getThrottling() {\r\n    return api.get('util/throttle');\r\n}\r\n\r\nasync function setThrottling(throttle) {\r\n    return api.post('util', { throttle });\r\n}\n\nasync function collectionList(onSelect) {\r\n    const collections = await getCollections();\r\n\r\n    return html`\r\n    <ul class=\"collection-list\">\r\n        ${collections.map(collectionLi)}\r\n    </ul>`;\r\n\r\n    function collectionLi(name) {\r\n        return html`<li><a href=\"javascript:void(0)\" @click=${(ev) => onSelect(ev, name)}>${name}</a></li>`;\r\n    }\r\n}\n\nasync function recordTable(collectionName) {\r\n    const records = await getRecords(collectionName);\r\n    const layout = getLayout(records);\r\n\r\n    return html`\r\n    <table>\r\n        <caption>${collectionName}</caption>\r\n        <thead>\r\n            <tr>${layout.map(f => html`<th>${f}</th>`)}</tr>\r\n        </thead>\r\n        <tbody>\r\n            ${records.map(r => recordRow(r, layout))}\r\n        </tbody>\r\n    </table>`;\r\n}\r\n\r\nfunction getLayout(records) {\r\n    const result = new Set(['_id']);\r\n    records.forEach(r => Object.keys(r).forEach(k => result.add(k)));\r\n\r\n    return [...result.keys()];\r\n}\r\n\r\nfunction recordRow(record, layout) {\r\n    return html`\r\n    <tr>\r\n        ${layout.map(f => html`<td>${JSON.stringify(record[f]) || html`<span>(missing)</span>`}</td>`)}\r\n    </tr>`;\r\n}\n\nasync function throttlePanel(display) {\r\n    const active = await getThrottling();\r\n\r\n    return html`\r\n    <p>\r\n        Request throttling: </span>${active}</span>\r\n        <button @click=${(ev) => set(ev, true)}>Enable</button>\r\n        <button @click=${(ev) => set(ev, false)}>Disable</button>\r\n    </p>`;\r\n\r\n    async function set(ev, state) {\r\n        ev.target.disabled = true;\r\n        await setThrottling(state);\r\n        display();\r\n    }\r\n}\n\n//import page from '//unpkg.com/page/page.mjs';\r\n\r\n\r\nfunction start() {\r\n    const main = document.querySelector('main');\r\n    editor(main);\r\n}\r\n\r\nasync function editor(main) {\r\n    let list = html`<div class=\"col\">Loading&hellip;</div>`;\r\n    let viewer = html`<div class=\"col\">\r\n    <p>Select collection to view records</p>\r\n</div>`;\r\n    display();\r\n\r\n    list = html`<div class=\"col\">${await collectionList(onSelect)}</div>`;\r\n    display();\r\n\r\n    async function display() {\r\n        render(html`\r\n        <section class=\"layout\">\r\n            ${until(throttlePanel(display), html`<p>Loading</p>`)}\r\n        </section>\r\n        <section class=\"layout\">\r\n            ${list}\r\n            ${viewer}\r\n        </section>`, main);\r\n    }\r\n\r\n    async function onSelect(ev, name) {\r\n        ev.preventDefault();\r\n        viewer = html`<div class=\"col\">${await recordTable(name)}</div>`;\r\n        display();\r\n    }\r\n}\r\n\r\nstart();\n\n</script>\r\n</head>\r\n<body>\r\n    <main>\r\n        Loading&hellip;\r\n    </main>\r\n</body>\r\n</html>";
 
-    const mode = process.argv[2] == '-dev' ? 'dev' : 'prod';
+    const mode = process.argv[2] === '-dev' ? 'dev' : 'prod';
 
     const files = {
-        index: mode == 'prod' ? require$$0 : fs__default['default'].readFileSync('./client/index.html', 'utf-8')
+        index: mode === 'prod' ? require$$0 : fs__default['default'].readFileSync('./client/index.html', 'utf-8')
     };
 
     var admin = (method, tokens, query, body) => {
@@ -765,7 +765,7 @@
         let result = '';
 
         const resource = tokens.join('/');
-        if (resource && resource.split('.').pop() == 'js') {
+        if (resource && resource.split('.').pop() === 'js') {
             headers['Content-Type'] = 'application/javascript';
 
             files[resource] = files[resource] || fs__default['default'].readFileSync('./client/' + resource, 'utf-8');
@@ -991,7 +991,7 @@
                                 match = false;
                                 break;
                             }
-                        } else if (targetValue != entry[prop]) {
+                        } else if (targetValue !== entry[prop]) {
                             match = false;
                             break;
                         }
@@ -1038,7 +1038,7 @@
             '_ownerId'
         ];
         for (let key in entry) {
-            if (blacklist.includes(key) == false) {
+            if (blacklist.includes(key) === false) {
                 target[key] = deepCopy(entry[key]);
             }
         }
@@ -1094,8 +1094,8 @@
             function register(body) {
                 if (body.hasOwnProperty(identity) === false ||
                     body.hasOwnProperty('password') === false ||
-                    body[identity].length == 0 ||
-                    body.password.length == 0) {
+                    body[identity].length === 0 ||
+                    body.password.length === 0) {
                     throw new RequestError$2('Missing fields');
                 } else if (context.protectedStorage.query('users', { [identity]: body[identity] }).length !== 0) {
                     throw new ConflictError$1(`A user with the same ${identity} already exists`);
@@ -1116,7 +1116,7 @@
 
             function login(body) {
                 const targetUser = context.protectedStorage.query('users', { [identity]: body[identity] });
-                if (targetUser.length == 1) {
+                if (targetUser.length === 1) {
                     if (hash(body.password) === targetUser[0].hashedPassword) {
                         const result = targetUser[0];
                         delete result.hashedPassword;
@@ -1212,7 +1212,7 @@
                 return context.storage.get(collectionName, id);
             };
             const isOwner = (user, object) => {
-                return user._id == object._ownerId;
+                return user._id === object._ownerId;
             };
             context.rules = {
                 get,
@@ -1244,10 +1244,10 @@
                     rule = !!eval(rule);
                 }
 
-                if (rule == false) {
-                    if (action == '.create' || action == '.update') {
+                if (rule === false) {
+                    if (action === '.create' || action === '.update') {
                         delete newData[prop];
-                    } else if (action == '.read') {
+                    } else if (action === '.read') {
                         delete data[prop];
                     }
                 }
@@ -1261,7 +1261,7 @@
                 } else if (roles.includes('User')) {
                     return true;
                 } else if (context.user && roles.includes('Owner')) {
-                    return context.user._id == data._ownerId;
+                    return context.user._id === data._ownerId;
                 } else {
                     return false;
                 }
@@ -1307,7 +1307,7 @@
         function getPropRule(record, action) {
             const props = Object
                 .entries(record)
-                .filter(([k]) => k[0] != '.')
+                .filter(([k]) => k[0] !== '.')
                 .filter(([k, v]) => v.hasOwnProperty(action))
                 .map(([k, v]) => [k, v[action]]);
 
@@ -1363,18 +1363,18 @@
             }
         },
         comments: {
-        
+
         },
-        jewellery:{
+        jewellery: {
             "ff436770-76c5-40e2-b231-77409eda7a61": {
                 "title": "Bracelet",
-                "imageUrl": "images/i-1.png" ,
+                "imageUrl": "images/i-1.png",
                 "price": "1000",
                 "_createdOn": 1617194128618,
             },
             "1840a313-225c-416a-817a-9954d4609f7c": {
                 "title": "Ring",
-                "imageUrl": "images/i-2.png" ,
+                "imageUrl": "images/i-2.png",
                 "price": "1000",
                 "_createdOn": 1617194210928,
             },
