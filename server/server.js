@@ -1369,7 +1369,7 @@
             "ff436770-76c5-40e2-b231-77409eda7a61": {
                 "title": "Bracelet",
                 "imageUrl": "images/p-1.png",
-                "price": "1000",
+                "price": "1500",
             },
             "1840a313-225c-416a-817a-9954d4609f7c": {
                 "title": "Ring",
@@ -1379,7 +1379,7 @@
             "126777f5-3277-42ad-b874-76d043b069cb": {
                 "title": "Earings",
                 "imageUrl": "images/i-3.png",
-                "price": "1000",
+                "price": "900",
             }
         }
     };

@@ -12,8 +12,6 @@ export const Jewellery = () => {
             .then((res) => res.json())
             .then((result) => setJewellery(result));
     }, []);
-    console.log(jewellery);
-
     return (<body class="sub_page">
         <div className="hero_area">
             <HeaderNavigation />
