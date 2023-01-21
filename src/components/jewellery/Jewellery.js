@@ -4,12 +4,12 @@ import { FooterSection } from "../footerSection/FooterSectoin";
 import { InfoSection } from "../infoSection/InfoSection";
 import { JewelleryItem } from "./jewelleryItem/JewelleryItem";
 import { useState, useEffect } from "react";
+import { jewelleryService } from "../../services/jewelleryService";
 
 export const Jewellery = () => {
     const [jewellery, setJewellery] = useState([]);
     useEffect(() => {
-        fetch("http://localhost:3030/data/jewellery")
-            .then((res) => res.json())
+        jewelleryService()
             .then((result) => setJewellery(result));
     }, []);
     return (<body class="sub_page">
@@ -19,6 +19,9 @@ export const Jewellery = () => {
         {/* item section */}
         <div className="item_section layout_padding2">
             <div className="container">
+                <div className="heading_container">
+                    <h2>Our Best Price</h2>
+                </div>
                 <div className="item_container">
                     <div className="box">
                         <div className="price">
