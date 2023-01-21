@@ -5,12 +5,18 @@ import { InfoSection } from "../infoSection/InfoSection";
 import { JewelleryItem } from "./jewelleryItem/JewelleryItem";
 import { useState, useEffect } from "react";
 import { jewelleryService } from "../../services/jewelleryService";
+import { BestPriceItem } from "./bestPriceItem/BestPriceItem";
 
 export const Jewellery = () => {
     const [jewellery, setJewellery] = useState([]);
     useEffect(() => {
-        jewelleryService()
+        jewelleryService("jewellery")
             .then((result) => setJewellery(result));
+    }, []);
+    const [bestPrice, setBestPrice] = useState([]);
+    useEffect(() => {
+        jewelleryService("bestPrice")
+            .then((result) => setBestPrice(result));
     }, []);
     return (<body class="sub_page">
         <div className="hero_area">
@@ -23,39 +29,7 @@ export const Jewellery = () => {
                     <h2>Our Best Price</h2>
                 </div>
                 <div className="item_container">
-                    <div className="box">
-                        <div className="price">
-                            <h6>Best PRICE</h6>
-                        </div>
-                        <div className="img-box">
-                            <img src="images/i-1.png" alt="" />
-                        </div>
-                        <div className="name">
-                            <h5>Bracelet</h5>
-                        </div>
-                    </div>
-                    <div className="box">
-                        <div className="price">
-                            <h6>Best PRICE</h6>
-                        </div>
-                        <div className="img-box">
-                            <img src="images/i-2.png" alt="" />
-                        </div>
-                        <div className="name">
-                            <h5>Ring</h5>
-                        </div>
-                    </div>
-                    <div className="box">
-                        <div className="price">
-                            <h6>Best PRICE</h6>
-                        </div>
-                        <div className="img-box">
-                            <img src="images/i-3.png" alt="" />
-                        </div>
-                        <div className="name">
-                            <h5>Earings</h5>
-                        </div>
-                    </div>
+                    {bestPrice.map((x) => <BestPriceItem name={x.title} price={x.price} image={x.imageUrl}/>)}
                 </div>
             </div>
         </div>
