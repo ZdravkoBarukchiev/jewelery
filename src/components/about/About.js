@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
-import { FooterSection } from "../footerSection/FooterSectoin";
-import { HeaderNavigation } from "../headerNavigation/HeaderNavigation";
-import { InfoSection } from "../infoSection/InfoSection";
+import { FooterSection } from "../FooterSection/FooterSectoin";
+import { HeaderNavigation } from "../HeaderNavigation/HeaderNavigation";
+import { InfoSection } from "../InfoSection/InfoSection";
 
 export const About = () => {
     return (<body class="sub_page">

@@ -1,4 +1,4 @@
-import { HeaderNavigation } from "../headerNavigation/HeaderNavigation"
+import { HeaderNavigation } from "../HeaderNavigation/HeaderNavigation"
 
 export const Cart = () => {
     return (

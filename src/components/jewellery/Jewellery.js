@@ -1,11 +1,11 @@
 import { Link } from "react-router-dom";
-import { HeaderNavigation } from "../headerNavigation/HeaderNavigation";
-import { FooterSection } from "../footerSection/FooterSectoin";
-import { InfoSection } from "../infoSection/InfoSection";
-import { JewelleryItem } from "./jewelleryItem/JewelleryItem";
+import { HeaderNavigation } from "../HeaderNavigation/HeaderNavigation";
+import { FooterSection } from "../FooterSection/FooterSectoin";
+import { InfoSection } from "../InfoSection/InfoSection";
+import { JewelleryItem } from "./JewelleryItem/JewelleryItem";
 import { useState, useEffect } from "react";
 import { jewelleryService } from "../../services/jewelleryService";
-import { BestPriceItem } from "./bestPriceItem/BestPriceItem";
+import { BestPriceItem } from "./BestPriceItem/BestPriceItem";
 
 export const Jewellery = () => {
     const [jewellery, setJewellery] = useState([]);

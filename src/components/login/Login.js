@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { LoginContext } from "../../context/loginContext";
-import { HeaderNavigation } from "../headerNavigation/HeaderNavigation";
+import { HeaderNavigation } from "../HeaderNavigation/HeaderNavigation";
 export const Login = () => {
     const { userLogin } = useContext(LoginContext);
     const navigate = useNavigate();

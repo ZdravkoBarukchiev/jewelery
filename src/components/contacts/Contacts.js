@@ -1,6 +1,6 @@
-import { FooterSection } from "../footerSection/FooterSectoin";
-import { HeaderNavigation } from "../headerNavigation/HeaderNavigation";
-import { InfoSection } from "../infoSection/InfoSection";
+import { FooterSection } from "../FooterSection/FooterSectoin";
+import { HeaderNavigation } from "../HeaderNavigation/HeaderNavigation";
+import { InfoSection } from "../InfoSection/InfoSection";
 
 export const Contacts = () => {
   return (<body class="sub_page">
