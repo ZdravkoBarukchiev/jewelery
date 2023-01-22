@@ -2,6 +2,7 @@ import { useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { LoginContext } from "../../context/loginContext";
 import { HeaderNavigation } from "../HeaderNavigation/HeaderNavigation";
+import { loginService } from "../../services/loginService";
 export const Login = () => {
     const { userLogin } = useContext(LoginContext);
     const navigate = useNavigate();
@@ -9,20 +10,13 @@ export const Login = () => {
         e.preventDefault()
         const { email, password } = Object.fromEntries(new FormData(e.target));
 
-        const url = "http://localhost:3030/users/login";
-        fetch(url, {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ email, password }),
-        })
-            .then((res) => res.json())
+        loginService("login", email, password)
             .then((result) => {
                 userLogin(result);
                 navigate('/');
             });
-
     }
-    
+
     return (<div className="hero_area">
         <HeaderNavigation />
         <section className="contact_section layout_padding">
