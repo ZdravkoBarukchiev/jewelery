@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
+import { useState, useEffect } from "react";
 import { HeaderNavigation } from "../HeaderNavigation/HeaderNavigation";
 import { FooterSection } from "../FooterSection/FooterSectoin";
 import { InfoSection } from "../InfoSection/InfoSection";
 import { JewelleryItem } from "./JewelleryItem/JewelleryItem";
-import { useState, useEffect } from "react";
 import { jewelleryService } from "../../services/jewelleryService";
 import { BestPriceItem } from "./BestPriceItem/BestPriceItem";
 
@@ -18,7 +18,7 @@ export const Jewellery = () => {
         jewelleryService("bestPrice")
             .then((result) => setBestPrice(result));
     }, []);
-    
+
     return (<body class="sub_page">
         <div className="hero_area">
             <HeaderNavigation />
@@ -30,7 +30,7 @@ export const Jewellery = () => {
                     <h2>Our Best Price</h2>
                 </div>
                 <div className="item_container">
-                    {bestPrice.map((x) => <BestPriceItem name={x.title} price={x.price} image={x.imageUrl}/>)}
+                    {bestPrice.map((x) => <BestPriceItem name={x.title} price={x.price} image={x.imageUrl} />)}
                 </div>
             </div>
         </div>

@@ -2,6 +2,7 @@ import { useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { LoginContext } from "../../context/loginContext";
 import { HeaderNavigation } from "../HeaderNavigation/HeaderNavigation";
+import { loginService } from "../../services/loginService";
 
 export const Register = () => {
     const navigate = useNavigate();
@@ -12,22 +13,16 @@ export const Register = () => {
         const email = formData.get("email");
         const password = formData.get("password");
         const confirmPassword = formData.get("confirm-password");
-        const url = "http://localhost:3030/users/register";
         if (password !== confirmPassword) {
             return;
         }
-        fetch(url, {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ email, password }),
-        })
-            .then((res) => res.json())
+        loginService("register", email, password)
             .then((result) => {
                 userLogin(result);
                 navigate("/");
             });
     };
-    
+
     return (
         <div className="hero_area">
             <HeaderNavigation />

@@ -1,7 +1,6 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { LoginContext } from "../../context/loginContext";
-import { useEffect } from "react";
 
 export const Logout = () => {
     const navigate = useNavigate();
@@ -17,6 +16,6 @@ export const Logout = () => {
             navigate("/");
         })
     }, [userLogout, navigate, loginData.accessToken]);
-    
+
     return null;
 };
