@@ -2,7 +2,7 @@ import { Route, Routes } from 'react-router-dom';
 import { About } from './components/About/About';
 import { Contacts } from './components/Contacts/Contacts';
 import { Home } from './components/Home/Home';
-import { Jewellery } from './components/jewellery/Jewellery';
+import { Jewellery } from './components/Jewellery/Jewellery';
 import { Login } from './components/Login/Login';
 import { Register } from './components/Register/Register';
 import { Cart } from './components/Cart/Cart';

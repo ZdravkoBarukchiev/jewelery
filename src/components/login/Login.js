@@ -22,6 +22,7 @@ export const Login = () => {
             });
 
     }
+    
     return (<div className="hero_area">
         <HeaderNavigation />
         <section className="contact_section layout_padding">

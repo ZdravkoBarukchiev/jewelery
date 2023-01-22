@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom"
 export const JewelleryItem = ({ name, price, image }) => {
+
     return (
         <div className="box">
             <div className="name">

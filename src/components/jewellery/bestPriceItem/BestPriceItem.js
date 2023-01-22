@@ -1,4 +1,5 @@
 export const BestPriceItem = ({ name, price, image }) => {
+    
     return (
         <div className="box">
             <div className="price">

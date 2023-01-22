@@ -27,6 +27,7 @@ export const Register = () => {
                 navigate("/");
             });
     };
+    
     return (
         <div className="hero_area">
             <HeaderNavigation />

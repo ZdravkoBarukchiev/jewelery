@@ -1,6 +1,7 @@
 import { HeaderNavigation } from "../HeaderNavigation/HeaderNavigation"
 
 export const Cart = () => {
+    
     return (
         <div className="hero_area">
             <HeaderNavigation />

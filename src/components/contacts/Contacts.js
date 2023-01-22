@@ -3,6 +3,7 @@ import { HeaderNavigation } from "../HeaderNavigation/HeaderNavigation";
 import { InfoSection } from "../InfoSection/InfoSection";
 
 export const Contacts = () => {
+  
   return (<body class="sub_page">
     <div className="hero_area">
       <HeaderNavigation />

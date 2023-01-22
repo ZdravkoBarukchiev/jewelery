@@ -18,6 +18,7 @@ export const Jewellery = () => {
         jewelleryService("bestPrice")
             .then((result) => setBestPrice(result));
     }, []);
+    
     return (<body class="sub_page">
         <div className="hero_area">
             <HeaderNavigation />

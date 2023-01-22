@@ -1,4 +1,5 @@
 export const FooterSection = () => {
+    
     return (
         <section className="container-fluid footer_section">
             <p>

@@ -8,6 +8,7 @@ export const HeaderNavigation = () => {
         e.preventDefault()
         console.log('search');
     }
+    
     return (
         <header className="header_section">
             <div className="container-fluid">

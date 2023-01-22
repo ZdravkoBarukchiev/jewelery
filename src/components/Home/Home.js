@@ -4,6 +4,7 @@ import { HeaderNavigation } from "../HeaderNavigation/HeaderNavigation";
 import { InfoSection } from "../InfoSection/InfoSection";
 
 export const Home = () => {
+    
     return (<body>
         <div className="hero_area">
             <HeaderNavigation />

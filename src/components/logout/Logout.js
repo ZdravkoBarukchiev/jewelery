@@ -17,5 +17,6 @@ export const Logout = () => {
             navigate("/");
         })
     }, [userLogout, navigate, loginData.accessToken]);
+    
     return null;
 };
